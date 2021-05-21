@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">ast.servicio.probatch.configuration.**
+ast.servicio.probatch.connection.**
+ast.servicio.probatch.domain.**
+ast.servicio.probatch.exception.**
+ast.servicio.probatch.factory.**
+ast.servicio.probatch.message.**
+ast.servicio.probatch.os.service.**
+ast.servicio.probatch.service.**
+ast.servicio.probatch.test.**
+ast.servicio.probatch.threads.**
+ast.servicio.probatch.util.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">ast.servicio.probatch.configuration.*,
+ast.servicio.probatch.connection.*,
+ast.servicio.probatch.domain.*,
+ast.servicio.probatch.exception.*,
+ast.servicio.probatch.factory.*,
+ast.servicio.probatch.message.*,
+ast.servicio.probatch.os.service.*,
+ast.servicio.probatch.service.*,
+ast.servicio.probatch.test.*,
+ast.servicio.probatch.threads.*,
+ast.servicio.probatch.util.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+</properties>

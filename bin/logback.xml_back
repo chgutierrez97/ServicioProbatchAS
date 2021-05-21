@@ -1,0 +1,45 @@
+<configuration>
+	<property file="./proyect.conf" />
+	<property file="${PROBATCH-CONFIG}" />
+	<property name="ROLLING_TEMPLATE" value="%d{MM-dd}" scope="CONTEXT" />
+	<property name="DEFAULT_PATTERN" value="%msg%n" scope="CONTEXT" />
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+		<if condition='property("logfile") != "" '>
+			<then>
+				<file>${logfile}.log</file>
+				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+					<!-- daily rollover -->
+					<fileNamePattern>${logfile}.%d{MM-dd}.log
+					</fileNamePattern>
+					<!-- keep 30 days worth of history -->
+					<maxHistory>${logdays}</maxHistory>
+				</rollingPolicy>
+			</then>
+			<else>
+				<file>${wrkdir}/log/probatch-${port}.log</file>
+				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+					<!-- daily rollover -->
+					<fileNamePattern>${wrkdir}/log/probatch-${port}.%d{MM-dd}.log
+					</fileNamePattern>
+					<!-- keep 30 days worth of history -->
+					<maxHistory>${logdays}</maxHistory>
+				</rollingPolicy>
+			</else>
+		</if>
+
+
+
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%file:%line] [%level] %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<root level="${level}">
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>
